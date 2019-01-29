@@ -12,6 +12,6 @@ class HomeController < ApplicationController
 
   def jobs
     jobsService = JobsService.new
-    @jobs = jobsService.fetchGithubJobs('ruby')
+    @jobs = jobsService.fetchJobs(['ruby', 'python'])
   end
 end
