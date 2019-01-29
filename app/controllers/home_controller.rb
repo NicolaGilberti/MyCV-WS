@@ -4,11 +4,14 @@
 
 # If u want to add environments (just add them as we were doing in old secrets)
 # Rails.application.credentials[Rails.env.to_sym][:aws][:access_key_id]
+require 'jobsService/jobsService'
 
 class HomeController < ApplicationController
   def index
   end
 
   def jobs
+    jobsService = JobsService.new
+    @jobs = jobsService.fetchGithubJobs('ruby')
   end
 end

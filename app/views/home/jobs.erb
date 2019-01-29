@@ -6,8 +6,8 @@
     <h5 class="card-title">Here we show a List of Jobs from where to choose</h5>
     <p class="card-text">No worries you will be able to come back to this page and generate a CV for other jobs</p>
     <div class="list-group">
-      <% [1, 2, 3].each do |i| %>
-        <%= link_to("Job #{i}", '#', class: 'list-group-item list-group-item-action list-group-item-secondary') %>
+      <% @jobs.each do |job| %>
+        <%= link_to("#{job.title}", '#', class: 'list-group-item list-group-item-action list-group-item-secondary') %>
       <% end %>
     </div>
   </div>
