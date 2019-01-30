@@ -5,8 +5,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+
 # github jobs API
 gem 'github-jobs'
+
+# Google Talent APIs
+# each time we have to set this env variable in
+# order to be able to use the gem
+# this is my private location
+#
+# export GOOGLE_APPLICATION_CREDENTIALS="/home/nepotu/projects/MyCV-WS/GoogleKeys.json"
+gem 'google-api-client'
 
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'

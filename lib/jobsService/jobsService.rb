@@ -1,4 +1,4 @@
-require 'jobsService/githubService'
+require 'jobsService/fetchers/githubService'
 
 class JobsService
 
