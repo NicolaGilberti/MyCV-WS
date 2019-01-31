@@ -1,24 +1,35 @@
 require 'jobsService/fetchers/githubService'
+require 'jobsService/fetchers/stackoverflowService'
 
 class JobsService
+  attr_accessor :therms, :location
+  attr_accessor :githubJobs, :githubService
+  attr_accessor :stackoverflowJobs, :stackoverflowService
 
   # required constructor
-  def initialize
-    @githubService = GithubService.new
+  def initialize(therms, location)
+    @therms = therms
+    @location = location
+    @githubJobs = []
+    @stackoverflowJobs = []
   end
 
-  def fetchJobs(therms)
-    jobs = []
-    therms.each do |therm|
-      githubJobs = fetchGithubJobs(therm)
-      jobs += githubJobs
-    end
-    jobs
+  def fetchJobs
+    fetchFromGithub()
+    fetchFromStackoverflow()
   end
 
   private
-  def fetchGithubJobs(therm)
-    @githubService.fetch(therm)
+  def fetchFromGithub()
+    @githubService = GithubService.new(@therms.join('+'), @location)
+    @githubService.fetch()
+    @githubJobs = @githubService.jobs
+  end
+
+  def fetchFromStackoverflow()
+    @stackoverflowService = StackoverflowService.new(@therms.join('+'), @location)
+    @stackoverflowService.fetch()
+    @stackoverflowJobs = @stackoverflowService.jobs
   end
 
 end

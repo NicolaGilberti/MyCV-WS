@@ -1,24 +1,25 @@
 require 'jobsService/job'
 
 class GithubService
-  def initialize
+  attr_accessor :jobs, :therm, :location
+
+  def initialize(therm, location)
+    @therm = therm
+    @location = location
+    @jobs = []
   end
 
-  def fetch(therm)
-    rawJobs = Github::Jobs.positions(search: therm)
-    adaptedJobs = adaptJobs(rawJobs)
-    adaptedJobs
+  def fetch()
+    adapt(Github::Jobs.positions(search: @therm, location: @location))
   end
 
   private
 
-  def adaptJobs(rawJobs)
-    adaptedJobs = []
+  def adapt(rawJobs)
     rawJobs.each do |rawJob|
-      adaptedJob = Job.new(rawJob.title, rawJob.description)
-      adaptedJobs.push(adaptedJob)
+      description = ActionView::Base.full_sanitizer.sanitize(rawJob.description)
+      @jobs.push(Job.new(rawJob.title, description, rawJob.url))
     end
-    adaptedJobs
   end
 
 end

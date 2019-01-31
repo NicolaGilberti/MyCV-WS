@@ -12,7 +12,9 @@ class HomeController < ApplicationController
   end
 
   def jobs
-    jobsService = JobsService.new
-    @jobs = jobsService.fetchJobs(['ruby', 'python'])
+    jobsService = JobsService.new(['ruby', 'python'], 'Italia')
+    jobsService.fetchJobs()
+    @githubJobs = jobsService.githubJobs
+    @stackoverflowJobs = jobsService.stackoverflowJobs
   end
 end
