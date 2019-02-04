@@ -6,6 +6,11 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # FileUpdateChecker will detect by polling the change of the file.
+  # Solves a bug for me (MARIAN) because Rails wasn't
+  # automatically reloading my file changes
+  config.file_watcher = ActiveSupport::FileUpdateChecker
+
   # Do not eager load code on boot.
   config.eager_load = false
 

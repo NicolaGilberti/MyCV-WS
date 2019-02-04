@@ -3,13 +3,13 @@ source 'https://rubygems.org'
 source 'https://rails-assets.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.4.1'
 
 # RSS reader
 gem 'rss'
 
-# github jobs API
-gem 'github-jobs'
+# allows open() redirections from http to https
+gem 'open_uri_redirections'
 
 # Google Talent APIs
 # each time we have to set this env variable in

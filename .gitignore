@@ -49,3 +49,6 @@ node_modules/
 
 # do not push online google keys
 GoogleKeys.json
+
+# RubyMine folders and files
+./idea
