@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bb2191-41fe-4f71-82b3-541cb1c53d1e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/MyCV-WS.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.ruby-version" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/home/_jobs.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/services/ac.uk/constants.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ict4g.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ict4g.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MyCV-WS.iml" afterPath="$PROJECT_DIR$/.idea/MyCV-WS.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/jobs.erb" afterPath="$PROJECT_DIR$/app/views/home/jobs.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/collector/collector_service.rb" afterPath="$PROJECT_DIR$/lib/services/collector/collector_service.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/github/github.rb" afterPath="$PROJECT_DIR$/lib/services/github/github.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/job.rb" afterPath="$PROJECT_DIR$/lib/services/job.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/stackoverflow/stackoverflow.rb" afterPath="$PROJECT_DIR$/lib/services/stackoverflow/stackoverflow.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -40,8 +23,8 @@
       <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+            <state relative-caret-position="375">
+              <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -139,7 +122,6 @@
         <option value="$PROJECT_DIR$/lib/services/collector/collector.rb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/lib/services/ac.uk/constants.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/services/modules/constants.rb" />
         <option value="$PROJECT_DIR$/lib/services/modules/rss_reader.rb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
@@ -151,6 +133,7 @@
         <option value="$PROJECT_DIR$/app/views/home/_jobs.erb" />
         <option value="$PROJECT_DIR$/lib/services/collector/collector_service.rb" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -774,12 +757,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548976184740</updated>
       <workItem from="1548976188182" duration="748000" />
-      <workItem from="1549300662712" duration="12115000" />
+      <workItem from="1549300662712" duration="12907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12863000" />
+    <option name="totallyTimeSpent" value="13655000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -990,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        <state relative-caret-position="375">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
         </state>
       </provider>
