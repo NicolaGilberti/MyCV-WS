@@ -51,4 +51,7 @@ node_modules/
 GoogleKeys.json
 
 # RubyMine folders and files
+.idea/workspace.xml
 .idea/*
+# Ignore master key for decrypting credentials and more.
+/config/master.key
