@@ -5,11 +5,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+gem 'open_uri_redirections'
+
+# PostgreSql
+gem 'pg'
+
 # RSS reader
 gem 'rss'
-
-# allows open() redirections from http to https
-gem 'open_uri_redirections'
 
 # Google Talent APIs
 # each time we have to set this env variable in
@@ -17,7 +19,7 @@ gem 'open_uri_redirections'
 # this is my private location
 #
 # export GOOGLE_APPLICATION_CREDENTIALS="/home/nepotu/projects/MyCV-WS/GoogleKeys.json"
-gem 'google-api-client'
+# gem 'google-api-client'
 
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'

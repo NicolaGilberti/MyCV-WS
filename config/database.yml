@@ -1,0 +1,20 @@
+
+
+# Warning: The database defined as 'test' will be erased and
+# re-generated from your development database when you run 'rake'.
+# Do not set this db to the same as development or production.
+development:
+  adapter: postgresql
+  database: mycv_dev
+  username: admin
+  password: admin
+  host: localhost
+  encoding: utf8
+
+production:
+  adapter: postgresql
+  database: mycv_prod
+  username: admin
+  password: admin
+  host: localhost
+  encoding: utf8
