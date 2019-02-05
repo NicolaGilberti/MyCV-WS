@@ -51,4 +51,4 @@ node_modules/
 GoogleKeys.json
 
 # RubyMine folders and files
-./idea
+.idea/*
