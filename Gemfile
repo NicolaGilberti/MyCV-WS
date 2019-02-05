@@ -5,6 +5,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+
+###  Authentication Service
+
+gem 'devise'
+gem 'oauth2'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'facebook'
+gem 'omniauth-github'
+gem 'omniauth-linkedin-oauth2'
+
+###
+
+
 gem 'open_uri_redirections'
 
 # PostgreSql
@@ -26,6 +40,7 @@ gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
