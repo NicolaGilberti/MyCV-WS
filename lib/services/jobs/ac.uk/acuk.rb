@@ -1,33 +1,30 @@
-require 'services/job'
-require 'services/ac.uk/constants'
-require 'services/modules/rss_reader'
+require 'services/jobs/job'
+require 'services/jobs/ac.uk/constants'
+require 'services/jobs/modules/rss_reader'
 
 # collector of job offers from the site https://www.jobs.ac.uk/
 # from this site job offers are collected by Academic Discipline
-module AcUKService
-  class Jobs
+module AcUk
+  class Service
     include JobsAcUKConstants
     include RssReader
-    include JobSource
-    attr_accessor :jobs, :uri, :feed
+    attr_accessor :discipline, :jobs
 
     def initialize(discipline)
       @jobs = []
-      @uri = choose_url(discipline)
+      @discipline = discipline
     end
 
     def fetch
-      @jobs = fetch_rss(@uri, JobSource::ACUK)
+      @jobs = fetch_rss(url(@discipline), Sources::ACUK)
     end
 
     private
 
     # ToDo!
-    def choose_url(discipline)
+    def url(discipline)
       AGRICULTURE_FOOD_VETERINARY
     end
-
   end
-
 end
 

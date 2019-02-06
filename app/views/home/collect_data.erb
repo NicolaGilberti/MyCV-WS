@@ -11,7 +11,8 @@
       <%= current_user[:gender] %>
     <%= current_user[:birthday] %><br />-->
     <%= link_to "Logout", destroy_user_session_path, method: :delete %><br />
-    <%= link_to "Go to manage the Data", new_data_manager_path %><br />
+    <%= link_to "Go to manage the Data", update_path %><br />
+    <%= button_to('Go to manage the Data', update_path(), method: :post) %>
 <% end %>
 
-<%#= button_to('Go to Jobs', jobs_path, method: :get, class: 'btn btn-primary') %>
+<%= button_to('Go to Jobs', jobs_path, method: :post, class: 'btn btn-primary') %>

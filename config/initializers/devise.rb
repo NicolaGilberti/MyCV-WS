@@ -258,11 +258,23 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  config.omniauth :facebook, Rails.application.credentials.api_keys[:FACEBOOK_APP_ID], Rails.application.credentials.api_keys[:FACEBOOK_APP_SECRET],callback_url: "http://localhost:3000/users/auth/facebook/callback",scope: 'email,user_birthday,user_hometown,user_location,user_likes,user_photos,user_videos,user_friends,user_status,user_gender,email,public_profile',display: 'popup',info_fields: 'email,first_name,last_name,gender,birthday,location,picture,about,age_range,education,hometown,interested_in,sports,work,address'
+  config.omniauth :facebook,
+                  Rails.application.credentials.api_keys[:FACEBOOK_APP_ID],
+                  Rails.application.credentials.api_keys[:FACEBOOK_APP_SECRET],
+                  callback_url: "http://localhost:3000/users/auth/facebook/callback",
+                  scope: 'email,user_birthday,user_hometown,user_location,user_likes,user_photos,user_videos,user_friends,user_status,user_gender,email,public_profile',
+                  display: 'popup',
+                  info_fields: 'email,first_name,last_name,gender,birthday,location,picture,about,age_range,education,hometown,interested_in,sports,work,address'
 
-  config.omniauth :github, Rails.application.credentials.api_keys[:GITHUB_APP_ID], Rails.application.credentials.api_keys[:GITHUB_APP_SECRET],scope: 'user,public_repo'
+  config.omniauth :github,
+                  Rails.application.credentials.api_keys[:GITHUB_APP_ID],
+                  Rails.application.credentials.api_keys[:GITHUB_APP_SECRET],
+                  scope: 'user,public_repo'
 
-  config.omniauth :linkedin, Rails.application.credentials.api_keys[:LINKEDIN_APP_ID], Rails.application.credentials.api_keys[:LINKEDIN_APP_SECRET],scope: 'r_emailaddress,r_basicprofile,r_liteprofile,rw_company_admin', #
+  config.omniauth :linkedin,
+                  Rails.application.credentials.api_keys[:LINKEDIN_APP_ID],
+                  Rails.application.credentials.api_keys[:LINKEDIN_APP_SECRET],
+                  scope: 'r_emailaddress,r_basicprofile,r_liteprofile,rw_company_admin', #
                   :fields => ['skills','id', 'email-address', 'first-name', 'last-name','headline', 'location', 'industry', 'picture-urls::(original)', 'public-profile-url','positions','formatted-name','summary','specialties', 'picture-url']
 
 
