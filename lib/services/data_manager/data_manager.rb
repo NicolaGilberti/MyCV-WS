@@ -12,7 +12,7 @@ module Manager
     cv['gender'] = auth.extra.raw_info.gender if auth.extra.raw_info.gender
     cv['birthday'] = auth.extra.raw_info.birthday if auth.extra.raw_info.birthday
     cv['hometown'] = auth.extra.raw_info.hometown.name if auth.extra.raw_info.hometown.name
-    cv['age_range'] = auth.extra.raw_info.age_range.min if auth.extra.raw_info.age_range.min
+    cv['age_range'] = auth.extra.raw_info.age_range.min if auth.extra.raw_info.age_range
     cv['facebook_auth'] = true
   end
 

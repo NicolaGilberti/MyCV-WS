@@ -261,6 +261,8 @@ Devise.setup do |config|
   config.omniauth :facebook,
                   Rails.application.credentials.api_keys[:FACEBOOK_APP_ID],
                   Rails.application.credentials.api_keys[:FACEBOOK_APP_SECRET],
+                  # "https://rocky-woodland-75792.herokuapp.com/users/auth/facebook/callback"
+                  # "http://localhost:3000/users/auth/facebook/callback"
                   callback_url: "https://rocky-woodland-75792.herokuapp.com/users/auth/facebook/callback",
                   scope: 'email,user_birthday,user_hometown,user_location,user_likes,user_photos,user_videos,user_friends,user_status,user_gender,email,public_profile',
                   display: 'popup',

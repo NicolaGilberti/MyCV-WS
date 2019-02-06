@@ -1,8 +1,7 @@
 alert("<%= @position %>");
+alert(`<%= @data %>`);
 
-alert("<%= @xml %>");
-
-let sample = {
+sample = {
     firstName: "Gigi",
     surname: "Babbuino",
     addressLine: "Via Palazzi 106",
@@ -138,13 +137,77 @@ let sample = {
     options: {
         language: "en"
     }
-};
+}
 
 $.ajax({
-        url: "http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php",
+        url: "https://cors-anywhere.herokuapp.com/http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php",
         method: "POST",
-        data: {data: sample},
+        data: sample,
         success: res => {
-        console.log(res);
-  }
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://cors-anywhere.herokuapp.com/https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv', true);
+        xhr.setRequestHeader("Content-Type", "application/xml");
+        xhr.setRequestHeader("Accept-Language", "en");
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function (e) {
+            if (this.status === 200) {
+                let blob = new Blob([this.response], {type: "application/pdf"});
+                let link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = "NOMEDOWNLOAD.pdf";
+                link.click();
+            }
+        };
+        xhr.send(res);
+        }
 });
+
+
+//$.ajax({
+//  url: "http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php",
+//  method: "POST",
+//  data: {data: sample},
+//  success: res => {
+//      console.log(res);
+//  }
+//});
+
+//let xhr = new XMLHttpRequest();
+//xhr.open('POST', 'https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv', true);
+//xhr.setRequestHeader("Content-Type", "application/xml");
+//xhr.setRequestHeader("Accept-Language", 'en');
+//xhr.responseType = 'arraybuffer';
+//xhr.onload = function (e) {
+//    if (this.status === 200) {
+//        let blob = new Blob([this.response], {type: "application/pdf"});
+//        let link = document.createElement('a');
+//        link.href = window.URL.createObjectURL(blob);
+//        link.download = "NOMEDOWNLOAD.pdf";
+//        link.click();
+//    }
+//};
+//xhr.send(jQuery.parseXML($("<p/>").html().text()));
+
+
+//$.ajax({
+//        url: "http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php",
+//        method: "POST",
+//        data: sample,
+//        success: res => {
+//          let xhr = new XMLHttpRequest();
+//          xhr.open('POST', 'https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv', true);
+//          xhr.setRequestHeader("Content-Type", "application/xml");
+//          xhr.setRequestHeader("Accept-Language", LANGUAGE);
+//          xhr.responseType = 'arraybuffer';
+//          xhr.onload = function (e) {
+//              if (this.status === 200) {
+//                  let blob = new Blob([this.response], {type: "application/pdf"});
+//                  let link = document.createElement('a');
+//                  link.href = window.URL.createObjectURL(blob);
+//                  link.download = "NOMEDOWNLOAD.pdf";
+//                  link.click();
+//              }
+//          };
+//          xhr.send(res);
+//}
+//});

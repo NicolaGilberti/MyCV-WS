@@ -2,7 +2,6 @@
 <div id="accordion-<%= source_site.tr('.', '') %>" class="mb-2" role="tablist" aria-multiselectable="true">
 
   <% jobs.each_with_index do |job, index| %>
-      SOURCE <%= job.source %>
       <div class="card">
         <div class="card-header" role="tab" id="heading<%= index %>-<%= source_site.tr('.', '') %>">
           <h5 class="mb-0">
@@ -10,6 +9,7 @@
                href="#collapse<%= index %>-<%= source_site.tr('.', '') %>"
                aria-expanded="true" aria-controls="collapse<%= index %>-<%= source_site.tr('.', '') %>">
               <%= job.title %>
+              <#%= image_tag('github.png') %>
             </a>
           </h5>
         </div>
