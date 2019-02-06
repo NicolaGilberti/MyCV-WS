@@ -26,6 +26,7 @@ class HomeController < ApplicationController
 
   def generate_cv
     @position = params['position']
+    ap `curl http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`
   end
 
   private
