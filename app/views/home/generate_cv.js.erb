@@ -1,6 +1,3 @@
-alert("<%= @position %>");
-alert(`<%= @data %>`);
-
 sample = {
     firstName: "<%= session['data']['name'] %>",
     surname: "Rossa",
@@ -124,11 +121,11 @@ $.ajax({
                 let link = document.createElement('a');
                 link.href = window.URL.createObjectURL(blob);
                 link.download = "NOMEDOWNLOAD.pdf";
-                link.click();
+                link.click(å);
             }
         };
         xhr.send(res);
-        }
+      }
 });
 
 
