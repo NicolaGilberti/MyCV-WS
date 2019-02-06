@@ -2,16 +2,16 @@ alert("<%= @position %>");
 alert(`<%= @data %>`);
 
 sample = {
-    firstName: "Gigi",
-    surname: "Babbuino",
+    firstName: "<%= session['data']['name'] %>",
+    surname: "Rossa",
     addressLine: "Via Palazzi 106",
     postalCode: "36090",
     municipality: "",
     country: {
-        code: "IT",
-        label: "Italy"
+        code: "<%= session['data']['location'] %>",
+        label: "<%= session['data']['location'] %>"
     },
-    email: "gigi.babbuino@mail.com",
+    email: "<%= session['data']['email'] %>",
     telephoneList: [
         {
             contact: "+39 3259984572",
@@ -21,46 +21,29 @@ sample = {
             }
         },
         {
-            contact: "+39 3259984571",
+            contact: "+0453 726 352",
             use: {
                 code: "home",
                 label: "Home"
             }
         }
     ],
-    birthday: "1980-04-11",
+    birthday: "<%= session['data']['birthday'] %>",
     gender: {
-        code: "M",
-        label: "Male"
+        code: "<%= session['data']['gender'] %>",
+        label: "<%= session['data']['gender'] %>"
     },
     photo: "", // Da vedere
-    job: "Resource assistant",
+    job: "<%= @position %>",
     workExperienceList: [
         {
-            from: "2002-08",
+            from: "<%= session['data']['work_to'] %>",
             to: "",
             current: "true",
-            position: "Head CEO of things",
+            position: "<%= session['data']['work_position'] %>",
             activities: "I did things and stuff",
             employer: {
-                name: "Agency of BABA",
-                addressLine: "Via Palazzi 106",
-                postalCode: "36090",
-                municipality: "",
-                country: {
-                    code: "IT",
-                    label: "Italy"
-                }
-            }
-        },
-        {
-            from: "2002-03",
-            to: "2002-07",
-            current: "false",
-            position: "Not head CEO of things",
-            activities: "I did things and stuff but worse",
-            employer: {
-                name: "Agency of BABA",
+                name: "<%= session['data']['work_org_name'] %>",
                 addressLine: "Via Palazzi 106",
                 postalCode: "36090",
                 municipality: "",
@@ -73,31 +56,17 @@ sample = {
     ],
     educationList: [
         {
-            from: "1997",
-            to: "2001",
+            from: "<%= session['data']['education_from'] %>",
+            to: "<%= session['data']['education_to'] %>",
             current: "false",
-            title: "PhD - Thesis title: 'How to eat seagulls'",
+            title: "<%= session['data']['education_title'] %>",
             activities: "Lots of stuffs and sss",
             organization: {
-                name: "University of BABABA",
+                name: "<%= session['data']['education_org_name'] %>",
                 municipality: "",
                 country: {
-                    code: "IT",
-                    label: "Italy"
-                }
-            }
-        },
-        {
-            from: "1993",
-            to: "1997",
-            current: "false",
-            title: "Bachelor in stuff",
-            organization: {
-                name: "High School of BABABA",
-                municipality: "",
-                country: {
-                    code: "IT",
-                    label: "Italy"
+                    code: "<%= session['data']['hometown'] %>",
+                    label: ""
                 }
             }
         }
@@ -106,8 +75,8 @@ sample = {
         linguistic: [
             {
                 description: {
-                    code: "IT",
-                    label: "Italian"
+                    code: "<%= session['data']['language_spoken'] %>",
+                    label: "<%= session['data']['language_spoken'] %>"
                 },
                 proficiency: {
                     listening: "A1",
@@ -119,11 +88,11 @@ sample = {
                 verifiedBy: "GIGI"
             }
         ],
-        communication: "Boring text.",
-        organisational: "Boring text v2.0",
-        computer: "Super boring text.",
-        other: "I do stuff i guess.",
-        driving: ["A", "B"]
+        communication: "<%= session['data']['communication_skills'] %>",
+        organisational: "<%= session['data']['organizational_skills'] %>",
+        computer: "<%= session['data']['it_languages'] %>",
+        other: "<%= session['data']['other_skills'] %>",
+        driving: ["<%= session['data']['driving_licence'] %>"]
     },
     achievementList: [
         {
@@ -131,7 +100,7 @@ sample = {
                 code: "publications",
                 label: "Publications"
             },
-            description: "AIJYUAGYGSUYGIAGAUGUAGUYAGUYAGUGAU"
+            description: ""
         }
     ],
     options: {
