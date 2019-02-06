@@ -1,18 +1,10 @@
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-<% if checkProviderExist("facebook") %> <b>Already logged in</b><% end %><br />
-<%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
-<% if checkProviderExist("github") %> <b>Already logged in</b><% end %><br />
-<%= link_to "Sign in with Linkedin", user_linkedin_omniauth_authorize_path %>
-<% if checkProviderExist("linkedin") %> <b>Already logged in</b><% end %><br />
-<% if current_user %>
-    <!--<%=image_tag(current_user[:image])%>
-    <%= current_user[:name] %><br />
-      <%= current_user[:email] %><br />
-      <%= current_user[:gender] %>
-    <%= current_user[:birthday] %><br />-->
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %><br />
-    <%= link_to "Go to manage the Data", update_path %><br />
-    <%= button_to('Go to manage the Data', update_path(), method: :post) %>
-<% end %>
+<%= link_to_if !session['data']['facebook_auth'], "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<% if session['data']['facebook_auth'] %> <b>Already logged in</b><% end %><br />
 
-<%= button_to('Go to Jobs', jobs_path, method: :post, class: 'btn btn-primary') %>
+<%= link_to_if !session['data']['github_auth'], 'Sign in with Github', user_github_omniauth_authorize_path %>
+<% if session['data']['github_auth'] %> <b>Already logged in</b><% end %><br />
+
+<%= link_to_if !session['data']['linkedin_auth'], 'Sign in with Linkedin', user_linkedin_omniauth_authorize_path %>
+<% if session['data']['linkedin_auth'] %> <b>Already logged in</b><% end %><br />
+<br />
+<%= button_to('Go to manage the Data', update_path, method: :post, class: 'btn btn-primary') if logged_complete?(session['data'])%>

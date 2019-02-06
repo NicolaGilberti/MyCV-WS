@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/home/jobs', to: 'home#jobs', as: 'jobs'
   post '/home/collect_data', to: 'home#collect_data', as: 'collect'
   post '/home/update_data', to: 'home#update_data', as: 'update'
+  get '/home/generate_cv/:position', to: 'home#generate_cv', as: 'generate'
 
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 

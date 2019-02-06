@@ -7,8 +7,8 @@ module Jobs
     attr_accessor :jobs
 
     def initialize(therms, location)
-      @github = Github::Service.new(therms.join('+'), location)
-      @stackoverflow = Stackoverflow::Service.new(therms.join('+'), location)
+      @github = Github::Service.new(therms, location)
+      @stackoverflow = Stackoverflow::Service.new(therms, location)
       @acuk = AcUk::Service.new('')
     end
 

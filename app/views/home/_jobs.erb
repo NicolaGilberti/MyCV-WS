@@ -19,6 +19,8 @@
           <div class="card-block">
             <%= job.description %>
             <a href="<%= job.uri %>" class="btn btn-primary">See original post</a>
+
+            <%= link_to 'Generate cv', generate_path(job.title), remote: true, class: 'btn-primary' %>
           </div>
         </div>
       </div>

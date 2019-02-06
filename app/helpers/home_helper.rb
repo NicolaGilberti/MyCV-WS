@@ -1,5 +1,5 @@
 module HomeHelper
-  def checkProviderExist(prov)
-    User.where(provider: prov).exists?(conditions = :none)
+  def logged_complete?(data)
+    data['github_auth'] || data['facebook_auth'] || data['linkedin_auth']
   end
 end

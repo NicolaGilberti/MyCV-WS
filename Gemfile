@@ -15,6 +15,7 @@ gem 'omniauth-facebook'
 gem 'facebook'
 gem 'omniauth-github'
 gem 'omniauth-linkedin-oauth2'
+gem 'http'
 
 ###
 

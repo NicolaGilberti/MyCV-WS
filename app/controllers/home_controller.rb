@@ -6,7 +6,6 @@
 # If u want to add environments (just add them as we were doing in old secrets)
 # Rails.application.credentials[Rails.env.to_sym][:aws][:access_key_id]
 
-require 'services/data_manager/data_manager'
 require 'services/jobs/jobs'
 
 class HomeController < ApplicationController
@@ -15,12 +14,22 @@ class HomeController < ApplicationController
   end
 
   def update_data
-    @data = session['data']
+    @curriculum = Curriculum.populate(session['data'], Curriculum.new)
   end
 
   def jobs
-    collector = Jobs::Service.new(%w('ruby python'), 'Italia')
+    @curriculum = Curriculum.new(curriculum_params)
+    collector = Jobs::Service.new(@curriculum.it_languages, @curriculum.location)
     collector.collect
     @jobs = collector.jobs
+  end
+
+  def generate_cv
+    @position = params['position']
+  end
+
+  private
+  def curriculum_params
+    params.require(:curriculum).permit!
   end
 end

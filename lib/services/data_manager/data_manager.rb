@@ -1,39 +1,41 @@
 require 'ostruct'
-require 'net/http'
-require 'open-uri'
-require 'open_uri_redirections'
+require 'http'
 
 module Manager
 
   def update_from_facebook(auth, cv)
-    cv['email'] = auth.info.email
-    cv['password'] = Devise.friendly_token[0,20]
-    cv['name'] = auth.info.name   # assuming the @cv model has a name
-    cv['image'] = auth.info.image # assuming the @cv model has an image
-    cv['location'] = auth.info.location
-    cv['gender'] = auth.extra.raw_info.gender
-    cv['birthday'] = auth.extra.raw_info.birthday
-    cv['hometown'] = auth.extra.raw_info.hometown.name
-    cv['age_range'] = auth.extra.raw_info.age_range.min
-
+    cv['email'] = auth.info.email if auth.info.email
+    cv['password'] = Devise.friendly_token[0,20] if Devise.friendly_token[0,20]
+    cv['name'] = auth.info.name if auth.info.name
+    cv['image'] = auth.info.image if auth.info.image
+    cv['location'] = auth.info.location if auth.info.location
+    cv['gender'] = auth.extra.raw_info.gender if auth.extra.raw_info.gender
+    cv['birthday'] = auth.extra.raw_info.birthday if auth.extra.raw_info.birthday
+    cv['hometown'] = auth.extra.raw_info.hometown.name if auth.extra.raw_info.hometown.name
+    cv['age_range'] = auth.extra.raw_info.age_range.min if auth.extra.raw_info.age_range
+    cv['facebook_auth'] = true
   end
 
   def update_from_github(auth, cv)
-    cv['email'] = auth.info.email
-    cv['password'] = Devise.friendly_token[0,20]
-    cv['name'] = auth.info.name   # assuming the @cv model has a name
-    cv['image'] = auth.info.image # assuming the @cv model has an image
-    cv['biography'] = auth.extra.raw_info.bio
-    token = auth.credentials.token
+    cv['email'] = auth.info.email if auth.info.email
+    cv['password'] = Devise.friendly_token[0,20] if Devise.friendly_token[0,20]
+    cv['name'] = auth.info.name if auth.info.name
+    cv['image'] = auth.info.image if auth.info.image
+    cv['biography'] = auth.extra.raw_info.bio if auth.extra.raw_info.bio
+    token = auth.credentials.token if auth.credentials.token
     tmp = Array.new
 
     uri = URI(auth.extra.raw_info.repos_url)
 
-    repos = JSON.parse(open(uri.to_s, :allow_redirections => :all, 'Authentication' => "token #{token}").read)
+    #repos = JSON.parse(open(uri.to_s, 'Authentication' => "token #{token}").read)
+
+    HTTP.auth("token #{token}")
+    repos = JSON.parse(HTTP.get(uri.to_s).body)
+
     repos.each do |gitPr|
       if not gitPr['fork']
         uri = URI(gitPr['languages_url'])
-        lang = JSON.parse(open(uri.to_s, :allow_redirections => :all, 'Authentication' => "token #{token}").read)
+        lang = JSON.parse(HTTP.get(uri.to_s).body)
         lang.each do |key,_|
           tmp << key
         end
@@ -42,25 +44,25 @@ module Manager
     $uriTmp = auth.extra.raw_info.starred_url.to_s
     $realUri = $uriTmp.gsub(/{(.*?)}/,'')
 
-    starred = JSON.parse(open($realUri, :allow_redirections => :all, 'Authentication' => "token #{token}").read)
+    starred = JSON.parse(HTTP.get($realUri).body)
     starred.each do |gitPr|
       uri = URI(gitPr['languages_url'])
-      lang = JSON.parse(open(uri.to_s, :allow_redirections => :all, 'Authentication' => "token #{token}").read)
+      lang = JSON.parse(HTTP.get(uri.to_s).body)
       lang.each do |key,_|
         tmp << key
       end
     end
-    cv['ITlanguages'] = tmp.uniq
+    cv['it_languages'] = tmp.uniq
+    cv['github_auth'] = true
   end
 
   def update_from_linkedin(auth, cv)
-    cv['email'] = auth.info.email
-    cv['password'] = Devise.friendly_token[0,20]
-    cv['name'] = auth.info.first_name   # assuming the @cv model has a name
-    cv['image'] = auth.info.picture_url # assuming the @cv model has an image
-    cv['languageSpoken'] = auth.extra.raw_info.lastName.preferredLocale.country
+    cv['email'] = auth.info.email if auth.info.email
+    cv['password'] = Devise.friendly_token[0,20] if Devise.friendly_token[0,20]
+    cv['name'] = auth.info.first_name if auth.info.first_name
+    cv['image'] = auth.info.picture_url if auth.info.picture_url
+    cv['language_spoken'] = auth.extra.raw_info.lastName.preferredLocale.country if auth.extra.raw_info.lastName.preferredLocale.country
+    cv['linkedin_auth'] = true
   end
-end
 
-class Curriculum < OpenStruct
 end
