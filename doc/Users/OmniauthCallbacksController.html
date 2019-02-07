@@ -152,7 +152,7 @@ all the data are received and usable.</p>
 
           
           <div class="method-source-code" id="facebook-source">
-            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 20</span>
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">facebook</span>
   <span class="ruby-identifier">update_from_facebook</span>(<span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>], <span class="ruby-ivar">@data</span>)
   <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;home/collect_data&#39;</span>
@@ -180,13 +180,13 @@ all the data are received and usable.</p>
 
         <div class="method-description">
           
-          
+          <p>This method manage the failure of the 3-legged connection</p>
           
           
 
           
           <div class="method-source-code" id="failure-source">
-            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 35</span>
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">failure</span>
   <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&#39;There was a problem signing you in. Please register or try signing in later.&#39;</span>
   <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">new_user_registration_url</span>
@@ -214,13 +214,13 @@ all the data are received and usable.</p>
 
         <div class="method-description">
           
-          
+          <p>This method is the final callback for <a href="../Github.html">Github</a></p>
           
           
 
           
           <div class="method-source-code" id="github-source">
-            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 25</span>
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">github</span>
   <span class="ruby-identifier">update_from_github</span>(<span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>], <span class="ruby-ivar">@data</span>)
   <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;home/collect_data&#39;</span>
@@ -248,13 +248,13 @@ all the data are received and usable.</p>
 
         <div class="method-description">
           
-          
+          <p>This method is the final callback for Linkedin</p>
           
           
 
           
           <div class="method-source-code" id="linkedin-source">
-            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 30</span>
+            <pre><span class="ruby-comment"># File app/controllers/users/omniauth_callbacks_controller.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">linkedin</span>
   <span class="ruby-identifier">update_from_linkedin</span>(<span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&#39;omniauth.auth&#39;</span>], <span class="ruby-ivar">@data</span>)
   <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;home/collect_data&#39;</span>

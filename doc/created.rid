@@ -1,4 +1,4 @@
-Thu, 07 Feb 2019 23:20:12 +0100
+Thu, 07 Feb 2019 23:24:14 +0100
 lib/services/data_manager/data_manager.rb	Thu, 07 Feb 2019 22:52:07 +0100
 lib/services/jobs/google/google.rb	Wed, 06 Feb 2019 18:46:44 +0100
 lib/services/jobs/jobs.rb	Thu, 07 Feb 2019 22:05:53 +0100
@@ -11,6 +11,6 @@ lib/services/jobs/modules/adapter.rb	Thu, 07 Feb 2019 22:18:56 +0100
 lib/services/jobs/modules/rss_reader.rb	Thu, 07 Feb 2019 22:18:56 +0100
 app/controllers/application_controller.rb	Fri, 01 Feb 2019 00:08:30 +0100
 app/controllers/home_controller.rb	Thu, 07 Feb 2019 23:20:03 +0100
-app/controllers/users/omniauth_callbacks_controller.rb	Thu, 07 Feb 2019 22:58:45 +0100
+app/controllers/users/omniauth_callbacks_controller.rb	Thu, 07 Feb 2019 23:22:42 +0100
 app/models/curriculum.rb	Thu, 07 Feb 2019 23:03:14 +0100
 app/models/user.rb	Thu, 07 Feb 2019 22:59:25 +0100

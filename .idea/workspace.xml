@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bb2191-41fe-4f71-82b3-541cb1c53d1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/js/search_index.js.gz" afterPath="$PROJECT_DIR$/doc/js/search_index.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Users/OmniauthCallbacksController.html" afterPath="$PROJECT_DIR$/doc/Users/OmniauthCallbacksController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/created.rid" afterPath="$PROJECT_DIR$/doc/created.rid" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/js/search_index.js" afterPath="$PROJECT_DIR$/doc/js/search_index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -42,8 +45,8 @@
       <file leaf-file-name="omniauth_callbacks_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -914,7 +917,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85977000" />
+    <option name="totallyTimeSpent" value="86078000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1349,8 +1352,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
