@@ -7,6 +7,8 @@
     <div class="form-row">
       <div class="col">
         <img src="<%= @curriculum.image %>" class="img-thumbnail w-25 p-3">
+        <%= f.label :image, hidden: true %>
+        <%= f.text_field :image, hidden: true %>
       </div>
       <div class="col">
         <%= f.label :name%>

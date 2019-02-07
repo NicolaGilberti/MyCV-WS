@@ -9,6 +9,7 @@
 require 'services/jobs/jobs'
 require 'open-uri'
 require 'net/http'
+require 'base64'
 
 class HomeController < ApplicationController
   def collect_data
@@ -17,10 +18,12 @@ class HomeController < ApplicationController
 
   def update_data
     @curriculum = Curriculum.populate(session['data'], Curriculum.new)
+    session['data'] = @curriculum
   end
 
   def jobs
     @curriculum = Curriculum.new(curriculum_params)
+    session['data'] = @curriculum
     collector = Jobs::Service.new(@curriculum.it_languages, @curriculum.location)
     collector.collect
     @jobs = collector.jobs
@@ -29,8 +32,11 @@ class HomeController < ApplicationController
   def generate_cv
     @position = params['position']
     # data = `curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '#{json(nil)}'  http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s
+    @image = Base64.encode64(open(session['data']['image']) { |io| io.read })
+    hash = JSON.parse(json)
+    #_json = compile(hash, session['data'])
 
-    @data = `curl http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s
+    #@data = `curl http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s
     #download = post_xml('https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv', data)
     #IO.copy_stream(download, '/tmp/my_file.pdf')
 
@@ -50,105 +56,74 @@ class HomeController < ApplicationController
     response.body
   end
 
-  def json(data)
+  def json
     %q{
     {
-  "firstName": "Gigi",
-  "surname": "Babbuino",
-  "addressLine": "Via Palazzi 106",
-  "postalCode": "36090",
+  "firstName": "",
+  "surname": "",
+  "addressLine": "",
+  "postalCode": "",
   "municipality": "",
   "country": {
-    "code": "IT",
-    "label": "Italy"
+    "code": "",
+    "label": ""
   },
-  "email": "gigi.babbuino@mail.com",
+  "email": "",
   "telephoneList": [
     {
-      "contact": "+39 3259984572",
+      "contact": "",
       "use": {
         "code": "mobile",
         "label": "Mobile"
       }
     },
     {
-      "contact": "+39 3259984571",
+      "contact": "",
       "use": {
         "code": "home",
         "label": "Home"
       }
     }
   ],
-  "birthday": "1980-04-11",
+  "birthday": "",
   "gender": {
-    "code": "M",
-    "label": "Male"
+    "code": "",
+    "label": ""
   },
   "photo": "", // Da vedere
-  "job": "Resource assistant",
+  "job": "",
   "workExperienceList": [
     {
-      "from": "2002-08",
+      "from": "",
       "to": "",
-      "current": "true",
-      "position": "Head CEO of things",
-      "activities": "I did things and stuff",
+      "current": "",
+      "position": "",
+      "activities": "",
       "employer": {
-        "name": "Agency of BABA",
-        "addressLine": "Via Palazzi 106",
-        "postalCode": "36090",
+        "name": "",
+        "addressLine": "",
+        "postalCode": "",
         "municipality": "",
         "country": {
-          "code": "IT",
-          "label": "Italy"
-        }
-      }
-    },
-    {
-      "from": "2002-03",
-      "to": "2002-07",
-      "current": "false",
-      "position": "Not head CEO of things",
-      "activities": "I did things and stuff but worse",
-      "employer": {
-        "name": "Agency of BABA",
-        "addressLine": "Via Palazzi 106",
-        "postalCode": "36090",
-        "municipality": "",
-        "country": {
-          "code": "IT",
-          "label": "Italy"
+          "code": "",
+          "label": ""
         }
       }
     }
   ],
   "educationList": [
     {
-      "from": "1997",
-      "to": "2001",
-      "current": "false",
-      "title": "PhD - Thesis title: 'How to eat seagulls'",
-      "activities": "Lots of stuffs and sss",
+      "from": "",
+      "to": "",
+      "current": "",
+      "title": "",
+      "activities": "",
       "organization": {
-        "name": "University of BABABA",
+        "name": "",
         "municipality": "",
         "country": {
-          "code": "IT",
-          "label": "Italy"
-        }
-      }
-    },
-    {
-      "from": "1993",
-      "to": "1997",
-      "current": "false",
-      "title": "Bachelor in stuff",
-      "organization": {
-        "name": "High School of BABABA",
-        "municipality": "",
-        "country": {
-          "code": "IT",
-          "label": "Italy"
+          "code": "",
+          "label": ""
         }
       }
     }

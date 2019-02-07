@@ -1,52 +1,68 @@
+function convertImgToBase64URL(url, callback, outputFormat){
+    var img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = function(){
+        var canvas = document.createElement('CANVAS'),
+            ctx = canvas.getContext('2d'), dataURL;
+        canvas.height = img.height;
+        canvas.width = img.width;
+        ctx.drawImage(img, 0, 0);
+        dataURL = canvas.toDataURL(outputFormat);
+        callback(dataURL);
+        canvas = null;
+    };
+    img.src = url;
+}
+
 sample = {
     firstName: "<%= session['data']['name'] %>",
-    surname: "Rossa",
-    addressLine: "Via Palazzi 106",
-    postalCode: "36090",
-    municipality: "",
+    surname: "",
+    addressLine: "-",
+    postalCode: "-",
+    municipality: "-",
     country: {
-        code: "<%= session['data']['location'] %>",
-        label: "<%= session['data']['location'] %>"
+        code: "-",
+        label: "<%= session['data']['hometown'] %>"
     },
     email: "<%= session['data']['email'] %>",
     telephoneList: [
         {
-            contact: "+39 3259984572",
+            contact: "-",
             use: {
-                code: "mobile",
-                label: "Mobile"
+                code: "-",
+                label: "-"
             }
         },
         {
-            contact: "+0453 726 352",
+            contact: "-",
             use: {
-                code: "home",
-                label: "Home"
+                code: "-",
+                label: "-"
             }
         }
     ],
     birthday: "<%= session['data']['birthday'] %>",
     gender: {
-        code: "<%= session['data']['gender'] %>",
+        code: "-",
         label: "<%= session['data']['gender'] %>"
     },
     photo: "", // Da vedere
     job: "<%= @position %>",
     workExperienceList: [
         {
-            from: "<%= session['data']['work_to'] %>",
-            to: "",
-            current: "true",
+            from: "<%= session['data']['work_from'] %>",
+            to: "<%= session['data']['work_to'] %>",
+            current: "-",
             position: "<%= session['data']['work_position'] %>",
-            activities: "I did things and stuff",
+            activities: "-",
             employer: {
                 name: "<%= session['data']['work_org_name'] %>",
-                addressLine: "Via Palazzi 106",
-                postalCode: "36090",
-                municipality: "",
+                addressLine: "-",
+                postalCode: "-",
+                municipality: "-",
                 country: {
-                    code: "IT",
-                    label: "Italy"
+                    code: "-",
+                    label: "-"
                 }
             }
         }
@@ -55,15 +71,15 @@ sample = {
         {
             from: "<%= session['data']['education_from'] %>",
             to: "<%= session['data']['education_to'] %>",
-            current: "false",
+            current: "-",
             title: "<%= session['data']['education_title'] %>",
-            activities: "Lots of stuffs and sss",
+            activities: "-",
             organization: {
                 name: "<%= session['data']['education_org_name'] %>",
-                municipality: "",
+                municipality: "-",
                 country: {
-                    code: "<%= session['data']['hometown'] %>",
-                    label: ""
+                    code: "-",
+                    label: "-"
                 }
             }
         }
@@ -72,21 +88,21 @@ sample = {
         linguistic: [
             {
                 description: {
-                    code: "<%= session['data']['language_spoken'] %>",
+                    code: "-",
                     label: "<%= session['data']['language_spoken'] %>"
                 },
                 proficiency: {
-                    listening: "A1",
-                    reading: "C2",
-                    spokenInteraction: "B2",
-                    spokenProduction: "C4",
-                    writing: "C2"
+                    listening: "-",
+                    reading: "-",
+                    spokenInteraction: "-",
+                    spokenProduction: "-",
+                    writing: "-"
                 },
-                verifiedBy: "GIGI"
+                verifiedBy: "-"
             }
         ],
         communication: "<%= session['data']['communication_skills'] %>",
-        organisational: "<%= session['data']['organizational_skills'] %>",
+        organisational: "<%= session['data']['organisational_skills'] %>",
         computer: "<%= session['data']['it_languages'] %>",
         other: "<%= session['data']['other_skills'] %>",
         driving: ["<%= session['data']['driving_licence'] %>"]
@@ -94,16 +110,130 @@ sample = {
     achievementList: [
         {
             title: {
-                code: "publications",
-                label: "Publications"
+                code: "-",
+                label: "-"
             },
-            description: ""
+            description: "<%= session['data']['biography'] %>"
         }
     ],
     options: {
         language: "en"
     }
 }
+
+
+convertImgToBase64URL('http://bit.ly/18g0VNp', function(base64Img){
+    sample['photo'] = base64Img;
+});
+
+//sample = {
+//    firstName: `<%= session['data']['name'] %>`,
+//    surname: ``,
+//    addressLine: `Via Palazzi 106`,
+//    postalCode: `36090`,
+//    municipality: ``,
+//    country: {
+//        code: `<%= session['data']['location'] %>`,
+//        label: `<%= session['data']['location'] %>`
+//    },
+//    email: `<%= session['data']['email'] %>`,
+//    telephoneList: [
+//        {
+//            contact: `+39 3259984572`,
+//            use: {
+//                code: `mobile`,
+//                label: `Mobile`
+//            }
+//        },
+//        {
+//            contact: `+0453 726 352`,
+//            use: {
+//                code: `home`,
+//                label: `Home`
+//            }
+//        }
+//    ],
+//    birthday: `<%= session['data']['birthday'] %>`,
+//    gender: {
+//        code: `<%= session['data']['gender'] %>`,
+//        label: `<%= session['data']['gender'] %>`
+//    },
+//    photo: ``, // Da vedere
+//    job: `<%= @position %>`,
+//    workExperienceList: [
+//        {
+//            from: `<%= session['data']['work_from'] %>`,
+//            to: `<%= session['data']['work_to'] %>`,
+//            current: `true`,
+//            position: `<%= session['data']['work_position'] %>`,
+//            activities: 'I did things and stuff',
+//            employer: {
+//                name: `<%= session['data']['work_org_name'] %>`,
+//                addressLine: `Via Palazzi 106`,
+//                postalCode: `36090`,
+//                municipality: ``,
+//                country: {
+//                    code: `IT`,
+//                    label: `Italy`
+//                }
+//            }
+//        }
+//    ],
+//    educationList: [
+//        {
+//            from: `<%= session['data']['education_from'] %>`,
+//            to: `<%= session['data']['education_to'] %>`,
+//            current: `false`,
+//            title: `<%= session['data']['education_title'] %>`,
+//            activities: `Lots of stuffs and sss`,
+//            organization: {
+//                name: `<%= session['data']['education_org_name'] %>`,
+//                municipality: ``,
+//                country: {
+//                    code: `<%= session['data']['hometown'] %>`,
+//                    label: ``
+//                }
+//            }
+//        }
+//    ],
+//    skills: {
+//        linguistic: [
+//            {
+//                description: {
+//                    code: `<%= session['data']['language_spoken'] %>`,
+//                    label: `<%= session['data']['language_spoken'] %>`
+//                },
+//                proficiency: {
+//                    listening: `A1`,
+//                    reading: `C2`,
+//                    spokenInteraction: `B2`,
+//                    spokenProduction: `C4`,
+//                    writing: `C2`
+//                },
+//                verifiedBy: `GIGI`
+//            }
+//        ],
+//        communication: `<%= session['data']['communication_skills'] %>`,
+//        organisational: `<%= session['data']['organizational_skills'] %>`,
+//        computer: `<%= session['data']['it_languages'] %>`,
+//        other: `<%= session['data']['other_skills'] %>`,
+//        driving: [`<%= session['data']['driving_licence'] %>`]
+//    },
+//    achievementList: [
+//        {
+//            title: {
+//                code: `publications`,
+//                label: `Publications`
+//            },
+//            description: ``
+//        }
+//    ],
+//    options: {
+//        language: `en`
+//    }
+//}
+
+console.log(sample)
 
 $.ajax({
         url: "https://cors-anywhere.herokuapp.com/http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php",
@@ -113,7 +243,7 @@ $.ajax({
         let xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://cors-anywhere.herokuapp.com/https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv', true);
         xhr.setRequestHeader("Content-Type", "application/xml");
-        xhr.setRequestHeader("Accept-Language", "en");
+        xhr.setRequestHeader("Accept-Language", 'en');
         xhr.responseType = 'arraybuffer';
         xhr.onload = function (e) {
             if (this.status === 200) {
@@ -125,8 +255,31 @@ $.ajax({
             }
         };
         xhr.send(res);
-      }
+        }
 });
+
+//$.ajax({
+//        url: "https://cors-anywhere.herokuapp.com/http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php",
+//        method: "POST",
+//        data: sample,
+//        success: res => {
+//        let xhr = new XMLHttpRequest();
+//        xhr.open('POST', 'https://cors-anywhere.herokuapp.com/https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv', true);
+//        xhr.setRequestHeader("Content-Type", "application/xml");
+//        xhr.setRequestHeader("Accept-Language", "en");
+//        xhr.responseType = 'arraybuffer';
+//        xhr.onload = function (e) {
+//            if (this.status === 200) {
+//                let blob = new Blob([this.response], {type: "application/pdf"});
+//                let link = document.createElement('a');
+//                link.href = window.URL.createObjectURL(blob);
+//                link.download = "NOMEDOWNLOAD.pdf";
+//                link.click();
+//            }
+//        };
+//        xhr.send(res);
+//      }
+//});
 
 
 //$.ajax({
