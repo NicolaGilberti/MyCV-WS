@@ -26,6 +26,9 @@ class HomeController < ApplicationController
   ##
   # Initializes the session in order to make it populate later by
   # Devise and OAuth services then renders the root view of the system
+  #
+  #  It responds to:
+  #     GET /home/collect_data
   def collect_data
     session['data'] = Curriculum.new if session['data'] == nil
   end
@@ -33,6 +36,9 @@ class HomeController < ApplicationController
   ##
   # Populates the session and a model with data collected
   # from social networks and renders the update_data form
+  #
+  #  It responds to:
+  #     POST /home/collect_data
   def update_data
     @curriculum = Curriculum.populate(session['data'], Curriculum.new)
     session['data'] = @curriculum
@@ -42,6 +48,9 @@ class HomeController < ApplicationController
   # Takes the updated data from the previous step,
   # initializes a Jobs::Service and performs its operations
   # in order to fetch some job offers and renders those Jobs offers
+  #
+  #  It responds to:
+  #     POST /home/jobs
   def jobs
     @curriculum = Curriculum.new(curriculum_params)
     session['data'] = @curriculum
@@ -54,6 +63,9 @@ class HomeController < ApplicationController
   # It takes the chosen Type of Application for the CV, converts the image link
   # in base64 format and renders the Javascript view which accesses GetXML and Europass
   # services in order to generate and send the CV to the user
+  #
+  #  It responds to:
+  #     GET /home/generate_cv/:position
   def generate_cv
     @position = params['position']
     @image = Base64.encode64(open(session['data']['image']).to_a.join).gsub("\n", '')

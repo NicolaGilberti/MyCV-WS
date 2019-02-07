@@ -139,12 +139,15 @@ services for the user.</p>
           
           <p>Initializes the session in order to make it populate later by Devise and
 OAuth services then renders the root view of the system</p>
+
+<pre>It responds to:
+   GET /home/collect_data</pre>
           
           
 
           
           <div class="method-source-code" id="collect_data-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 29</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">collect_data</span>
   <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] = <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
 <span class="ruby-keyword">end</span></pre>
@@ -174,12 +177,15 @@ OAuth services then renders the root view of the system</p>
           <p>It takes the chosen Type of Application for the CV, converts the image link
 in base64 format and renders the Javascript view which accesses GetXML and
 Europass services in order to generate and send the CV to the user</p>
+
+<pre>It responds to:
+   GET /home/generate_cv/:position</pre>
           
           
 
           
           <div class="method-source-code" id="generate_cv-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 57</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_cv</span>
   <span class="ruby-ivar">@position</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;position&#39;</span>]
   <span class="ruby-ivar">@image</span> = <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">encode64</span>(<span class="ruby-identifier">open</span>(<span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>][<span class="ruby-string">&#39;image&#39;</span>]).<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">join</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">&#39;&#39;</span>)
@@ -211,12 +217,15 @@ Europass services in order to generate and send the CV to the user</p>
 href="Jobs/Service.html">Jobs::Service</a> and performs its operations in
 order to fetch some job offers and renders those <a
 href="Jobs.html">Jobs</a> offers</p>
+
+<pre>It responds to:
+   POST /home/jobs</pre>
           
           
 
           
           <div class="method-source-code" id="jobs-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 45</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">jobs</span>
   <span class="ruby-ivar">@curriculum</span> = <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">curriculum_params</span>)
   <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] = <span class="ruby-ivar">@curriculum</span>
@@ -250,12 +259,15 @@ href="Jobs.html">Jobs</a> offers</p>
           <p>Populates the session and a model with data collected from social networks
 and renders the <a
 href="HomeController.html#method-i-update_data">#update_data</a> form</p>
+
+<pre>It responds to:
+   POST /home/collect_data</pre>
           
           
 
           
           <div class="method-source-code" id="update_data-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 36</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_data</span>
   <span class="ruby-ivar">@curriculum</span> = <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">populate</span>(<span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>], <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">new</span>)
   <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] = <span class="ruby-ivar">@curriculum</span>

@@ -2,143 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26bb2191-41fe-4f71-82b3-541cb1c53d1e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/AcUk.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/AcUk/Service.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ActiveRecord.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ActiveSupport.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ActiveSupport/TestCase.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Adapter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/AddDataManagerModel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/AddFacebookData.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/AddGithubData.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/AddOmniauthToUsers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/AddlinkedinData.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationCable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationCable/Channel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationCable/Connection.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationHelper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationJob.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationMailer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/ApplicationSystemTestCase.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Bundler.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/CreateCurriculums.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Curriculum.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/CurriculumTest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/DeviseCreateUsers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Gemfile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Gemfile_lock.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Github.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Github/Service.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/HomeController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/HomeControllerHelper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/HomeControllerTest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/HomeHelper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Job.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Jobs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Jobs/Service.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/JobsAcUKConstants.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Logger.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Manager.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/MyCVWs2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/MyCVWs2/Application.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Object.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/README_md.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Rakefile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/RssReader.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Sources.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Stackoverflow.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Stackoverflow/Service.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/User.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/UserTest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Users.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Users/OmniauthCallbacksController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Users/OmniauthCallbacksControllerTest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Users/OmniauthCallbacksHelper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/config/manifest_js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/javascripts/application_js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/javascripts/cable_js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/javascripts/home_coffee.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/javascripts/users/omniauth_callbacks_coffee.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/stylesheets/application_scss.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/stylesheets/home_scss.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/app/assets/stylesheets/users/omniauth_callbacks_scss.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/config/credentials_yml_enc.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/config/master_key.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/config_ru.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/created.rid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/css/fonts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/css/rdoc.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/fonts/Lato-Light.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/fonts/Lato-LightItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/fonts/Lato-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/fonts/Lato-RegularItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/fonts/SourceCodePro-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/fonts/SourceCodePro-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/arrow_up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/brick.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/brick_link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/bug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/bullet_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/bullet_toggle_minus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/bullet_toggle_plus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/date.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/find.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/loadingAnimation.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/macFFBgHack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/package.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/page_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/page_white_text.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/page_white_width.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/plugin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/ruby.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/tag_blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/tag_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/transparent.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/wrench.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/wrench_orange.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/images/zoom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/darkfish.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/navigation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/navigation.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/search.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/search_index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/search_index.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/searcher.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/js/searcher.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/lib/services/jobs/j_json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/log/development_log.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/package_json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/public/404_html.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/public/422_html.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/public/500_html.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/public/apple-touch-icon-precomposed_png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/public/apple-touch-icon_png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/public/favicon_ico.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/public/robots_txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/table_of_contents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tmp/asd.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tmp/restart_txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/services/jobs/j.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/curriculum.rb" afterPath="$PROJECT_DIR$/app/models/curriculum.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/generate_cv.js.erb" afterPath="$PROJECT_DIR$/app/views/home/generate_cv.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/data_manager/data_manager.rb" afterPath="$PROJECT_DIR$/lib/services/data_manager/data_manager.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/ac.uk/acuk.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/ac.uk/acuk.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/ac.uk/constants.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/ac.uk/constants.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/github/github.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/github/github.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/job.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/job.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/jobs.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/jobs.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/modules/adapter.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/modules/adapter.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/modules/rss_reader.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/modules/rss_reader.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/services/jobs/stackoverflow/stackoverflow.rb" afterPath="$PROJECT_DIR$/lib/services/jobs/stackoverflow/stackoverflow.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -155,31 +19,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="omniauth_callbacks_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb">
+      <file leaf-file-name="home_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="50" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+            <state relative-caret-position="335">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="curriculum.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/curriculum.rb">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="90">
+              <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <file leaf-file-name="data_manager.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/services/data_manager/data_manager.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -266,12 +130,12 @@
         <option value="$PROJECT_DIR$/lib/services/jobs/modules/adapter.rb" />
         <option value="$PROJECT_DIR$/lib/services/jobs/modules/rss_reader.rb" />
         <option value="$PROJECT_DIR$/lib/services/jobs/job.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/lib/services/data_manager/data_manager.rb" />
         <option value="$PROJECT_DIR$/app/views/home/generate_cv.js.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/models/curriculum.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       </list>
     </option>
   </component>
@@ -472,20 +336,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyCV-WS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyCV-WS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1044,7 +894,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85101000" />
+    <option name="totallyTimeSpent" value="85822000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1357,14 +1207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
-          <caret line="64" column="43" lean-forward="false" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
@@ -1393,14 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/services/data_manager/data_manager.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="73" column="9" lean-forward="false" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1453,6 +1287,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/curriculum.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1469,18 +1311,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/lib/services/data_manager/data_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="75" lean-forward="true" selection-start-line="6" selection-start-column="75" selection-end-line="6" selection-end-column="75" />
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/curriculum.rb">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="90">
+          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
