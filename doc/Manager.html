@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Manager - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-update_from_facebook">#update_from_facebook</a>
+    
+    <li ><a href="#method-i-update_from_github">#update_from_github</a>
+    
+    <li ><a href="#method-i-update_from_linkedin">#update_from_linkedin</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Manager">
+  <h1 id="module-Manager" class="module">
+    module Manager
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-update_from_facebook" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_from_facebook</span><span
+            class="method-args">(auth, cv)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_from_facebook-source">
+            <pre><span class="ruby-comment"># File lib/services/data_manager/data_manager.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_from_facebook</span>(<span class="ruby-identifier">auth</span>, <span class="ruby-identifier">cv</span>)
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;email&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">email</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">email</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;password&#39;</span>] = <span class="ruby-constant">Devise</span>.<span class="ruby-identifier">friendly_token</span>[<span class="ruby-value">0</span>,<span class="ruby-value">20</span>] <span class="ruby-keyword">if</span> <span class="ruby-constant">Devise</span>.<span class="ruby-identifier">friendly_token</span>[<span class="ruby-value">0</span>,<span class="ruby-value">20</span>]
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;name&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;image&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">image</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">image</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;location&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">location</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">location</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;gender&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">gender</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">gender</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;birthday&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">birthday</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">birthday</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;hometown&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">hometown</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">hometown</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;age_range&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">age_range</span>.<span class="ruby-identifier">min</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">age_range</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;facebook_auth&#39;</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_from_github" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_from_github</span><span
+            class="method-args">(auth, cv)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_from_github-source">
+            <pre><span class="ruby-comment"># File lib/services/data_manager/data_manager.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_from_github</span>(<span class="ruby-identifier">auth</span>, <span class="ruby-identifier">cv</span>)
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;email&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">email</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">email</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;password&#39;</span>] = <span class="ruby-constant">Devise</span>.<span class="ruby-identifier">friendly_token</span>[<span class="ruby-value">0</span>,<span class="ruby-value">20</span>] <span class="ruby-keyword">if</span> <span class="ruby-constant">Devise</span>.<span class="ruby-identifier">friendly_token</span>[<span class="ruby-value">0</span>,<span class="ruby-value">20</span>]
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;name&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;image&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">image</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">image</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;biography&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">bio</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">bio</span>
+  <span class="ruby-identifier">token</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">credentials</span>.<span class="ruby-identifier">token</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">credentials</span>.<span class="ruby-identifier">token</span>
+  <span class="ruby-identifier">tmp</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>(<span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">repos_url</span>)
+
+  <span class="ruby-comment">#repos = JSON.parse(open(uri.to_s, &#39;Authentication&#39; =&gt; &quot;token #{token}&quot;).read)</span>
+
+  <span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">auth</span>(<span class="ruby-node">&quot;token #{token}&quot;</span>)
+  <span class="ruby-identifier">repos</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">body</span>)
+
+  <span class="ruby-identifier">repos</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gitPr</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">gitPr</span>[<span class="ruby-string">&#39;fork&#39;</span>]
+      <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>(<span class="ruby-identifier">gitPr</span>[<span class="ruby-string">&#39;languages_url&#39;</span>])
+      <span class="ruby-identifier">lang</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">body</span>)
+      <span class="ruby-identifier">lang</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">tmp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">$uriTmp</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">starred_url</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">$realUri</span> = <span class="ruby-identifier">$uriTmp</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/{(.*?)}/</span>,<span class="ruby-string">&#39;&#39;</span>)
+
+  <span class="ruby-identifier">starred</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">$realUri</span>).<span class="ruby-identifier">body</span>)
+  <span class="ruby-identifier">starred</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gitPr</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>(<span class="ruby-identifier">gitPr</span>[<span class="ruby-string">&#39;languages_url&#39;</span>])
+    <span class="ruby-identifier">lang</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">lang</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">tmp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;it_languages&#39;</span>] = <span class="ruby-identifier">tmp</span>.<span class="ruby-identifier">uniq</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;github_auth&#39;</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_from_linkedin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_from_linkedin</span><span
+            class="method-args">(auth, cv)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_from_linkedin-source">
+            <pre><span class="ruby-comment"># File lib/services/data_manager/data_manager.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_from_linkedin</span>(<span class="ruby-identifier">auth</span>, <span class="ruby-identifier">cv</span>)
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;email&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">email</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">email</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;password&#39;</span>] = <span class="ruby-constant">Devise</span>.<span class="ruby-identifier">friendly_token</span>[<span class="ruby-value">0</span>,<span class="ruby-value">20</span>] <span class="ruby-keyword">if</span> <span class="ruby-constant">Devise</span>.<span class="ruby-identifier">friendly_token</span>[<span class="ruby-value">0</span>,<span class="ruby-value">20</span>]
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;name&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">first_name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">first_name</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;image&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">picture_url</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">picture_url</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;language_spoken&#39;</span>] = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">lastName</span>.<span class="ruby-identifier">preferredLocale</span>.<span class="ruby-identifier">country</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">extra</span>.<span class="ruby-identifier">raw_info</span>.<span class="ruby-identifier">lastName</span>.<span class="ruby-identifier">preferredLocale</span>.<span class="ruby-identifier">country</span>
+  <span class="ruby-identifier">cv</span>[<span class="ruby-string">&#39;linkedin_auth&#39;</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

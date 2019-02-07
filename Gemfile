@@ -18,7 +18,7 @@ gem 'http'
 
 ###
 
-
+gem 'rdoc'
 gem 'open_uri_redirections'
 
 # PostgreSql

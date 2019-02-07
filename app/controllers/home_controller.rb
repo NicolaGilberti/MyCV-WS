@@ -11,7 +11,14 @@ require 'open-uri'
 require 'net/http'
 require 'base64'
 
+#
+# It is the process which manages the application flow
+# and session. It is the orchestrator of the internal services
+# which stores and retrieves data from services for the user.
+#
 class HomeController < ApplicationController
+  #
+  #
   def collect_data
     session['data'] = Curriculum.new if session['data'] == nil
   end
@@ -22,11 +29,8 @@ class HomeController < ApplicationController
   end
 
   def jobs
-
     @curriculum = Curriculum.new(curriculum_params)
-
     session['data'] = @curriculum
-
     collector = Jobs::Service.new(@curriculum.it_languages, @curriculum.location)
     collector.collect
     @jobs = collector.jobs
@@ -34,15 +38,7 @@ class HomeController < ApplicationController
 
   def generate_cv
     @position = params['position']
-    # data = `curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '#{json(nil)}'  http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s
     @image = Base64.encode64(open(session['data']['image']).to_a.join).gsub("\n", '')
-    #hash = JSON.parse(json)
-    #_json = compile(hash, session['data'])
-
-    #@data = `curl http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s
-    #download = post_xml('https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv', data)
-    #IO.copy_stream(download, '/tmp/my_file.pdf')
-
   end
 
   private
