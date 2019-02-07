@@ -86,6 +86,10 @@
 
   <section class="description">
     
+<p>It is the class used to store data related to curriculum It is also
+attached to the Database if in the future those information will be
+persistent</p>
+
   </section>
 
   
@@ -120,13 +124,14 @@
 
         <div class="method-description">
           
-          
+          <p>Class method which takes the session and populates the model with the data
+from the session</p>
           
           
 
           
           <div class="method-source-code" id="populate-source">
-            <pre><span class="ruby-comment"># File app/models/curriculum.rb, line 2</span>
+            <pre><span class="ruby-comment"># File app/models/curriculum.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">populate</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">curriculum</span>)
   <span class="ruby-identifier">curriculum</span>.<span class="ruby-identifier">email</span>  = <span class="ruby-identifier">data</span>[<span class="ruby-string">&#39;email&#39;</span>]
   <span class="ruby-identifier">curriculum</span>.<span class="ruby-identifier">password</span>  = <span class="ruby-identifier">data</span>[<span class="ruby-string">&#39;password&#39;</span>]

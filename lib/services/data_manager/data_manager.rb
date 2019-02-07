@@ -1,8 +1,20 @@
 require 'ostruct'
 require 'http'
 
+##
+# It contains methods to deal with integration personal data
+# about the user, retrieved from the social networks. Actually
+# those methods are performed by
+# Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 module Manager
 
+  ##
+  # Takes data from facebook and stores them in the
+  # input attribute.
+  #
+  # Params:
+  #   auth:: the json retrieved from Fecebook
+  #   cv:: the variable where to store the data
   def update_from_facebook(auth, cv)
     cv['email'] = auth.info.email if auth.info.email
     cv['password'] = Devise.friendly_token[0,20] if Devise.friendly_token[0,20]
@@ -16,6 +28,15 @@ module Manager
     cv['facebook_auth'] = true
   end
 
+  ##
+  # Takes data from Git Hub and stores them in the
+  # input attribute. Moreover it performs other HTTP calls
+  # to the source, in order to retrieve other data related
+  # to the user and integrates them in the passed variable.
+  #
+  # Params:
+  #   auth:: the json retrieved from Git Hub
+  #   cv:: the variable where to store the data
   def update_from_github(auth, cv)
     cv['email'] = auth.info.email if auth.info.email
     cv['password'] = Devise.friendly_token[0,20] if Devise.friendly_token[0,20]
@@ -56,6 +77,13 @@ module Manager
     cv['github_auth'] = true
   end
 
+  ##
+  # Takes data from Linkedin and stores them in the
+  # input attribute.
+  #
+  # Params:
+  #   auth:: the json retrieved from Git Hub
+  #   cv:: the variable where to store the data
   def update_from_linkedin(auth, cv)
     cv['email'] = auth.info.email if auth.info.email
     cv['password'] = Devise.friendly_token[0,20] if Devise.friendly_token[0,20]

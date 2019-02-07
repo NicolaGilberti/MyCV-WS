@@ -59,7 +59,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link"><a href="../Object.html">Object</a>
+  <p class="link">Object
   
 </div>
 
@@ -103,6 +103,9 @@
 
   <section class="description">
     
+<p>It is the service that deals with operations about fetching and storing
+data from Jobs.ac.uk</p>
+
   </section>
 
   
@@ -122,15 +125,15 @@
       </header>
 
       
-      <div id="attribute-i-discipline" class="method-detail">
+      <div id="attribute-i-discipline_url" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">discipline</span><span
+          <span class="method-name">discipline_url</span><span
             class="attribute-access-type">[RW]</span>
         </div>
 
         <div class="method-description">
         
-        
+        <p>The URL related to the chosen discipline</p>
         
         </div>
       </div>
@@ -143,7 +146,7 @@
 
         <div class="method-description">
         
-        
+        <p>The list of fetched jobs</p>
         
         </div>
       </div>
@@ -171,16 +174,22 @@
 
         <div class="method-description">
           
-          
+          <p>Initializes the service with an empty list of jobs and chooses an academic
+discipline type which will be used to fetch related jobs.</p>
+
+<p>Params:</p>
+
+<pre class="ruby"><span class="ruby-identifier">discipline</span><span class="ruby-operator">::</span> <span class="ruby-identifier">academic</span> <span class="ruby-identifier">discipline</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">user</span>
+</pre>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/ac.uk/acuk.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/ac.uk/acuk.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">discipline</span>)
   <span class="ruby-ivar">@jobs</span> = []
-  <span class="ruby-ivar">@discipline</span> = <span class="ruby-identifier">discipline</span>
+  <span class="ruby-ivar">@discipline_url</span> = <span class="ruby-identifier">url</span>(<span class="ruby-identifier">discipline</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -213,15 +222,16 @@
 
         <div class="method-description">
           
-          
+          <p>Fetches the data from the source service and stores the actual list of jobs
+internally.</p>
           
           
 
           
           <div class="method-source-code" id="fetch-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/ac.uk/acuk.rb, line 18</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/ac.uk/acuk.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span>
-  <span class="ruby-ivar">@jobs</span> = <span class="ruby-identifier">fetch_rss</span>(<span class="ruby-identifier">url</span>(<span class="ruby-ivar">@discipline</span>), <span class="ruby-constant">Sources</span><span class="ruby-operator">::</span><span class="ruby-constant">ACUK</span>)
+  <span class="ruby-ivar">@jobs</span> = <span class="ruby-identifier">fetch_rss</span>(<span class="ruby-ivar">@discipline_url</span>, <span class="ruby-constant">Sources</span><span class="ruby-operator">::</span><span class="ruby-constant">ACUK</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           

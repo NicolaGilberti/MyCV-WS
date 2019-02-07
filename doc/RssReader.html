@@ -90,6 +90,10 @@
 
   <section class="description">
     
+<p>It contains operations about fetching RSS feeds directly from an online
+source. It uses the <a href="Adapter.html">Adapter</a> in order to adapt
+its own data.</p>
+
   </section>
 
   
@@ -124,13 +128,20 @@
 
         <div class="method-description">
           
-          
+          <p>Performs an HTTP GET call, fetches the results and parses the result into a
+well-known structure</p>
+
+<p>Params:</p>
+
+<pre class="ruby"><span class="ruby-identifier">url</span><span class="ruby-operator">::</span> <span class="ruby-constant">URL</span> <span class="ruby-identifier">representing</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">source</span>
+<span class="ruby-identifier">source</span><span class="ruby-operator">::</span> <span class="ruby-identifier">constant</span> <span class="ruby-identifier">representing</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">source</span>
+</pre>
           
           
 
           
           <div class="method-source-code" id="fetch_rss-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/modules/rss_reader.rb, line 8</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/modules/rss_reader.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch_rss</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">source</span>)
   <span class="ruby-identifier">open</span>(<span class="ruby-identifier">url</span>, <span class="ruby-value">:allow_redirections</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:all</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rss</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">adapt_rss</span>(<span class="ruby-constant">RSS</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">rss</span>), <span class="ruby-identifier">source</span>)

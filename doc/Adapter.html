@@ -81,6 +81,10 @@
 
   <section class="description">
     
+<p>Contains methods for dealing with formatting operations into internal well
+understood data structures of the data retrieved from external job offers
+web services</p>
+
   </section>
 
   
@@ -115,13 +119,20 @@
 
         <div class="method-description">
           
-          
+          <p>Adapts a list of a <a href="Jobs.html">Jobs</a> formatted JSONs into a list
+of <a href="Jobs.html">Jobs</a> formatted into an internal representation
+of it</p>
+
+<p>Params:</p>
+
+<pre class="ruby"><span class="ruby-identifier">raw_jobs</span><span class="ruby-operator">::</span> <span class="ruby-identifier">list</span> <span class="ruby-identifier">of</span> <span class="ruby-constant">JSONJobs</span>
+</pre>
           
           
 
           
           <div class="method-source-code" id="adapt_github_json-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/modules/adapter.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/modules/adapter.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">adapt_github_json</span>(<span class="ruby-identifier">raw_jobs</span>)
   [].<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">jobs</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">raw_jobs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rawJob</span><span class="ruby-operator">|</span>
@@ -158,13 +169,22 @@
 
         <div class="method-description">
           
-          
+          <p>Adapts an RSS feed data structure into an internal representation of it.</p>
+
+<p>Specs of RSS [<a
+href="https://validator.w3.org/feed/docs/rss2.html">validator.w3.org/feed/docs/rss2.html</a>]</p>
+
+<p>Params:</p>
+
+<pre class="ruby"><span class="ruby-identifier">feed</span><span class="ruby-operator">::</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">entire</span> <span class="ruby-constant">XML</span> <span class="ruby-identifier">feed</span> <span class="ruby-identifier">structure</span>
+<span class="ruby-identifier">source</span><span class="ruby-operator">::</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">constant</span> <span class="ruby-identifier">rapresenting</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">source</span>
+</pre>
           
           
 
           
           <div class="method-source-code" id="adapt_rss-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/modules/adapter.rb, line 4</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/modules/adapter.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">adapt_rss</span>(<span class="ruby-identifier">feed</span>, <span class="ruby-identifier">source</span>)
   [].<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">jobs</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">feed</span>.<span class="ruby-identifier">items</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>

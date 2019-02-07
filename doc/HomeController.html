@@ -92,6 +92,17 @@
 
   <section class="description">
     
+<p>It is the process which manages the application flow and session. It is the
+orchestrator of the internal services which stores and retrieves data from
+services for the user.</p>
+
+<p>The actual flow of the application is:</p>
+
+<pre>1. Collecting data from Social Networks Providers
+2. Allow the user to visualize and modify the data
+3. Retrieve and show a list of possible compatible job offers to apply for
+4. Generate a PDF containing the CV of the user</pre>
+
   </section>
 
   
@@ -126,13 +137,14 @@
 
         <div class="method-description">
           
-          
+          <p>Initializes the session in order to make it populate later by Devise and
+OAuth services then renders the root view of the system</p>
           
           
 
           
           <div class="method-source-code" id="collect_data-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">collect_data</span>
   <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] = <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
 <span class="ruby-keyword">end</span></pre>
@@ -159,24 +171,18 @@
 
         <div class="method-description">
           
-          
+          <p>It takes the chosen Type of Application for the CV, converts the image link
+in base64 format and renders the Javascript view which accesses GetXML and
+Europass services in order to generate and send the CV to the user</p>
           
           
 
           
           <div class="method-source-code" id="generate_cv-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 35</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_cv</span>
   <span class="ruby-ivar">@position</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;position&#39;</span>]
-  <span class="ruby-comment"># data = `curl -v -H &quot;Accept: application/json&quot; -H &quot;Content-type: application/json&quot; -X POST -d &#39;#{json(nil)}&#39;  http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s</span>
   <span class="ruby-ivar">@image</span> = <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">encode64</span>(<span class="ruby-identifier">open</span>(<span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>][<span class="ruby-string">&#39;image&#39;</span>]).<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">join</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">&#39;&#39;</span>)
-  <span class="ruby-comment">#hash = JSON.parse(json)</span>
-  <span class="ruby-comment">#_json = compile(hash, session[&#39;data&#39;])</span>
-
-  <span class="ruby-comment">#@data = `curl http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s</span>
-  <span class="ruby-comment">#download = post_xml(&#39;https://europass.cedefop.europa.eu/rest/v1/document/to/pdf-cv&#39;, data)</span>
-  <span class="ruby-comment">#IO.copy_stream(download, &#39;/tmp/my_file.pdf&#39;)</span>
-
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -201,19 +207,19 @@
 
         <div class="method-description">
           
-          
+          <p>Takes the updated data from the previous step, initializes a <a
+href="Jobs/Service.html">Jobs::Service</a> and performs its operations in
+order to fetch some job offers and renders those <a
+href="Jobs.html">Jobs</a> offers</p>
           
           
 
           
           <div class="method-source-code" id="jobs-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 24</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">jobs</span>
-
   <span class="ruby-ivar">@curriculum</span> = <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">curriculum_params</span>)
-
   <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] = <span class="ruby-ivar">@curriculum</span>
-
   <span class="ruby-identifier">collector</span> = <span class="ruby-constant">Jobs</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@curriculum</span>.<span class="ruby-identifier">it_languages</span>, <span class="ruby-ivar">@curriculum</span>.<span class="ruby-identifier">location</span>)
   <span class="ruby-identifier">collector</span>.<span class="ruby-identifier">collect</span>
   <span class="ruby-ivar">@jobs</span> = <span class="ruby-identifier">collector</span>.<span class="ruby-identifier">jobs</span>
@@ -241,13 +247,15 @@
 
         <div class="method-description">
           
-          
+          <p>Populates the session and a model with data collected from social networks
+and renders the <a
+href="HomeController.html#method-i-update_data">#update_data</a> form</p>
           
           
 
           
           <div class="method-source-code" id="update_data-source">
-            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 19</span>
+            <pre><span class="ruby-comment"># File app/controllers/home_controller.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_data</span>
   <span class="ruby-ivar">@curriculum</span> = <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">populate</span>(<span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>], <span class="ruby-constant">Curriculum</span>.<span class="ruby-identifier">new</span>)
   <span class="ruby-identifier">session</span>[<span class="ruby-string">&#39;data&#39;</span>] = <span class="ruby-ivar">@curriculum</span>

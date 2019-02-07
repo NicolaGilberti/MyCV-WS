@@ -1,3 +1,5 @@
+# It stores the constants used by the AcUk::Service to fetch specific
+# job offers based on the service settings.
 module JobsAcUKConstants
   AGRICULTURE_FOOD_VETERINARY = 'https://www.jobs.ac.uk/jobs/agriculture-food-and-veterinary/?format=rss'
   ARCHITECTURE_BUILDING_PLANNING = 'https://www.jobs.ac.uk/jobs/architecture-building-and-planning/?format=rss'

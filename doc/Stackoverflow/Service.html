@@ -59,7 +59,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link"><a href="../Object.html">Object</a>
+  <p class="link">Object
   
 </div>
 
@@ -99,6 +99,10 @@
 
   <section class="description">
     
+<p>It is the service which deals with operations of connecting, querying,
+fetching and adapting job offers from <a
+href="../Stackoverflow.html">Stackoverflow</a> source</p>
+
   </section>
 
   
@@ -126,7 +130,7 @@
 
         <div class="method-description">
         
-        
+        <p>list of stored jobs</p>
         
         </div>
       </div>
@@ -139,7 +143,7 @@
 
         <div class="method-description">
         
-        
+        <p>location for the search</p>
         
         </div>
       </div>
@@ -152,7 +156,7 @@
 
         <div class="method-description">
         
-        
+        <p>therm for the search</p>
         
         </div>
       </div>
@@ -180,13 +184,19 @@
 
         <div class="method-description">
           
-          
+          <p>Initializes the service with a :therm used to query the source, a :location
+and creates an empty list of jobs.</p>
+
+<p>Params:</p>
+
+<pre>therm:: therm for the search (Ex. &quot;remote developer&quot;)
+location:: location for the search of the jobs</pre>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/stackoverflow/stackoverflow.rb, line 14</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/stackoverflow/stackoverflow.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">therm</span>, <span class="ruby-identifier">location</span>)
   <span class="ruby-ivar">@therm</span> = <span class="ruby-identifier">therm</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -223,13 +233,14 @@
 
         <div class="method-description">
           
-          
+          <p>Downloads the data from <a href="../Stackoverflow.html">Stackoverflow</a>
+web service.</p>
           
           
 
           
           <div class="method-source-code" id="fetch-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/stackoverflow/stackoverflow.rb, line 20</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/stackoverflow/stackoverflow.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span>
   <span class="ruby-ivar">@jobs</span> = <span class="ruby-identifier">fetch_rss</span>(<span class="ruby-identifier">url</span>, <span class="ruby-constant">Sources</span><span class="ruby-operator">::</span><span class="ruby-constant">STACKOVERFLOW</span>)
 <span class="ruby-keyword">end</span></pre>

@@ -59,7 +59,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link"><a href="../Object.html">Object</a>
+  <p class="link">Object
   
 </div>
 
@@ -90,6 +90,9 @@
 
   <section class="description">
     
+<p>It is the service which integrates all the jobs in just one list of jobs
+and selects only a little fraction to be shown to the user</p>
+
   </section>
 
   
@@ -117,7 +120,7 @@
 
         <div class="method-description">
         
-        
+        <p>the list of retrieved jobs</p>
         
         </div>
       </div>
@@ -145,13 +148,18 @@
 
         <div class="method-description">
           
-          
+          <p>Initializes the service with the parameters needed and the micro services</p>
+
+<p>Params:</p>
+
+<pre>therm:: therm used for the search
+location:: location for the search</pre>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/jobs.rb, line 9</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/jobs.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">therms</span>, <span class="ruby-identifier">location</span>)
   <span class="ruby-ivar">@github</span> = <span class="ruby-constant">Github</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">therms</span>, <span class="ruby-identifier">location</span>)
   <span class="ruby-ivar">@stackoverflow</span> = <span class="ruby-constant">Stackoverflow</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">therms</span>, <span class="ruby-identifier">location</span>)
@@ -188,13 +196,13 @@
 
         <div class="method-description">
           
-          
+          <p>Collects the data</p>
           
           
 
           
           <div class="method-source-code" id="collect-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/jobs.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/jobs.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">collect</span>
   <span class="ruby-ivar">@jobs</span> = <span class="ruby-identifier">fetch</span>
 <span class="ruby-keyword">end</span></pre>
@@ -221,18 +229,18 @@
 
         <div class="method-description">
           
-          
+          <p>Invokes the micro services to operate and stores all the retrieved data</p>
           
           
 
           
           <div class="method-source-code" id="fetch-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/jobs.rb, line 19</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/jobs.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span>
   <span class="ruby-ivar">@github</span>.<span class="ruby-identifier">fetch</span>
   <span class="ruby-ivar">@stackoverflow</span>.<span class="ruby-identifier">fetch</span>
   <span class="ruby-ivar">@acuk</span>.<span class="ruby-identifier">fetch</span>
-  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">shuffle</span>
+  <span class="ruby-ivar">@jobs</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">shuffle</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

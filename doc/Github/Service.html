@@ -59,7 +59,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link"><a href="../Object.html">Object</a>
+  <p class="link">Object
   
 </div>
 
@@ -99,6 +99,9 @@
 
   <section class="description">
     
+<p>It represents the service that actually interacts with the outside web
+service. Moreover it adapts and stores the data fetched.</p>
+
   </section>
 
   
@@ -126,7 +129,7 @@
 
         <div class="method-description">
         
-        
+        <p>List of stored jobs</p>
         
         </div>
       </div>
@@ -139,7 +142,7 @@
 
         <div class="method-description">
         
-        
+        <p>Location for the search</p>
         
         </div>
       </div>
@@ -152,7 +155,7 @@
 
         <div class="method-description">
         
-        
+        <p>Therm for the search</p>
         
         </div>
       </div>
@@ -180,13 +183,19 @@
 
         <div class="method-description">
           
-          
+          <p>Initializes the service with the parameters needed for the API call and an
+empty list of jobs</p>
+
+<p>Params:</p>
+
+<pre>therm:: therm used for the search
+location:: location for the search</pre>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/github/github.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/github/github.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">therm</span>, <span class="ruby-identifier">location</span>)
   <span class="ruby-ivar">@therm</span> = <span class="ruby-identifier">therm</span>
   <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>
@@ -223,13 +232,18 @@
 
         <div class="method-description">
           
-          
+          <p>It is the operation that actually fetches and adapts the data from the
+source web service</p>
+
+<p>Params:</p>
+
+<pre>opts:: options for the remote call</pre>
           
           
 
           
           <div class="method-source-code" id="fetch-source">
-            <pre><span class="ruby-comment"># File lib/services/jobs/github/github.rb, line 19</span>
+            <pre><span class="ruby-comment"># File lib/services/jobs/github/github.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">opts</span>={})
   <span class="ruby-identifier">params</span> = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">page</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>)
                .<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{URI.encode(k.to_s)}=#{URI.encode(v.to_s)}&quot;</span> }

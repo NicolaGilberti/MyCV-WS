@@ -1,4 +1,11 @@
+##
+# It is the class used to store data related to curriculum
+# It is also attached to the Database if in the future those
+# information will be persistent
 class Curriculum < ActiveRecord::Base
+  ##
+  # Class method which takes the session and populates
+  # the model with the data from the session
   def self.populate(data, curriculum)
     curriculum.email  = data['email']
     curriculum.password  = data['password']
