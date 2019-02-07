@@ -9,7 +9,6 @@ require 'services/data_manager/data_manager'
 #
 # Because the scopes and the fields were defined before the connection,
 # here all the data are received and usable.
-#
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   include Manager
   before_action :set_data
@@ -22,16 +21,22 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     render 'home/collect_data'
   end
 
+  ##
+  # This method is the final callback for Github
   def github
     update_from_github(request.env['omniauth.auth'], @data)
     render 'home/collect_data'
   end
 
+  ##
+  # This method is the final callback for Linkedin
   def linkedin
     update_from_linkedin(request.env['omniauth.auth'], @data)
     render 'home/collect_data'
   end
 
+  ##
+  # This method manage the failure of the 3-legged connection
   def failure
     flash[:error] = 'There was a problem signing you in. Please register or try signing in later.'
     redirect_to new_user_registration_url
