@@ -22,8 +22,11 @@ class HomeController < ApplicationController
   end
 
   def jobs
+
     @curriculum = Curriculum.new(curriculum_params)
+
     session['data'] = @curriculum
+
     collector = Jobs::Service.new(@curriculum.it_languages, @curriculum.location)
     collector.collect
     @jobs = collector.jobs
@@ -32,8 +35,8 @@ class HomeController < ApplicationController
   def generate_cv
     @position = params['position']
     # data = `curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '#{json(nil)}'  http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s
-    @image = Base64.encode64(open(session['data']['image']) { |io| io.read })
-    hash = JSON.parse(json)
+    @image = Base64.encode64(open(session['data']['image']).to_a.join).gsub("\n", '')
+    #hash = JSON.parse(json)
     #_json = compile(hash, session['data'])
 
     #@data = `curl http://compagniadenoialtri.altervista.org/enrico/sde/europass/api.php`.to_s

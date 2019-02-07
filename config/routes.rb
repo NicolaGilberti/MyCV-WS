@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'home#collect_data'
+
   post '/home/jobs', to: 'home#jobs', as: 'jobs'
   post '/home/collect_data', to: 'home#collect_data', as: 'collect'
   post '/home/update_data', to: 'home#update_data', as: 'update'
